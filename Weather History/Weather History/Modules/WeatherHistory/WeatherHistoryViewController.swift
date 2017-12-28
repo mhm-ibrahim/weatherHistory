@@ -29,8 +29,8 @@ class WeatherHistoryViewController: UIViewController {
 //
 //        }
 //
-//        let images = ImagesInteractor.loadImages()
 //        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
+        presenter.loadImages()
     }
     
    

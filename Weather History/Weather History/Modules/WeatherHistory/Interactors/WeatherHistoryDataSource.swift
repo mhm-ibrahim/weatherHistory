@@ -19,14 +19,17 @@ class WeatherHistoryDataSource: NSObject, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cellId = String(describing: ImageThumbCollectionViewCell.self)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! ImageThumbCollectionViewCell
+        cell.thumbImageView.image = presenter.images[indexPath.item]
+        return cell
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return presenter.images.count
     }
 }
