@@ -43,7 +43,7 @@ public class ImagePickerHelper: NSObject {
                           viewController: UIViewController) {
         let picker = UIImagePickerController()
         picker.delegate = delegate
-        picker.allowsEditing = true
+//        picker.allowsEditing = true
         picker.sourceType = sourceType
         viewController.present(picker, animated: true, completion: nil)
     }
