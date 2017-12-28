@@ -17,6 +17,7 @@ class WeatherHistoryViewController: UIViewController {
         super.viewDidLoad()
         setupLocationManager()
         requestWeatherData()
+        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
     }
     
     func requestWeatherData() {
@@ -47,5 +48,25 @@ extension WeatherHistoryViewController: CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+    }
+}
+
+//MARK: UIImagePickerControllerDelegate
+
+extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        guard let image = info[UIImagePickerControllerEditedImage] as? UIImage else {
+            picker.dismiss(animated: true, completion: nil)
+            return
+        }
+        picker.dismiss(animated: true, completion: nil)
+//        school.profileImage = image
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
     }
 }

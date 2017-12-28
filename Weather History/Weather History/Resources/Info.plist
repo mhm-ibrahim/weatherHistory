@@ -24,6 +24,10 @@
 	<string>LaunchScreen</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is important to get accurate weather info!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Uses Camera</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Uses Photo Library</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
