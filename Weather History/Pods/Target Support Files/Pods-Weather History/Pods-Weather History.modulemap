@@ -1,0 +1,6 @@
+framework module Pods_Weather_History {
+  umbrella header "Pods-Weather History-umbrella.h"
+
+  export *
+  module * { export * }
+}

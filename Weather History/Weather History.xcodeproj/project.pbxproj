@@ -12,6 +12,7 @@
 		05F8597F1FF5075D007F9921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F8597D1FF5075D007F9921 /* LaunchScreen.storyboard */; };
 		05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859891FF509AB007F9921 /* WeatherHistoryViewController.swift */; };
 		05F8598C1FF509AB007F9921 /* WeatherHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F8598A1FF509AB007F9921 /* WeatherHistoryViewController.xib */; };
+		B9C13EA38D78932C55589C98 /* Pods_Weather_History.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		05F859801FF5075D007F9921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F859891FF509AB007F9921 /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
 		05F8598A1FF509AB007F9921 /* WeatherHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHistoryViewController.xib; sourceTree = "<group>"; };
+		24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_History.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37E6A1E6EAA754F86147EAE4 /* Pods-Weather History.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.release.xcconfig"; sourceTree = "<group>"; };
+		C3F0E9C3400A977D216057C9 /* Pods-Weather History.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9C13EA38D78932C55589C98 /* Pods_Weather_History.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				05F859731FF5075D007F9921 /* Weather History */,
 				05F859721FF5075D007F9921 /* Products */,
+				83FA8FFC5117F3B6CEF60612 /* Pods */,
+				A43E3C42A0840BDB8483491B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +61,7 @@
 		05F859731FF5075D007F9921 /* Weather History */ = {
 			isa = PBXGroup;
 			children = (
+				05F8598D1FF50A3B007F9921 /* Core */,
 				05F859871FF50971007F9921 /* Modules */,
 				05F859861FF50773007F9921 /* Resources */,
 				05F859741FF5075D007F9921 /* AppDelegate.swift */,
@@ -88,6 +96,54 @@
 			path = WeatherHistory;
 			sourceTree = "<group>";
 		};
+		05F8598D1FF50A3B007F9921 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				05F8598E1FF50A42007F9921 /* Network */,
+				05F8598F1FF50A49007F9921 /* Entities */,
+				05F859901FF50A7B007F9921 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		05F8598E1FF50A42007F9921 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		05F8598F1FF50A49007F9921 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		05F859901FF50A7B007F9921 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83FA8FFC5117F3B6CEF60612 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3F0E9C3400A977D216057C9 /* Pods-Weather History.debug.xcconfig */,
+				37E6A1E6EAA754F86147EAE4 /* Pods-Weather History.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A43E3C42A0840BDB8483491B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -95,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 05F859831FF5075D007F9921 /* Build configuration list for PBXNativeTarget "Weather History" */;
 			buildPhases = (
+				F2FF2273862937A048D721B7 /* [CP] Check Pods Manifest.lock */,
 				05F8596D1FF5075D007F9921 /* Sources */,
 				05F8596E1FF5075D007F9921 /* Frameworks */,
 				05F8596F1FF5075D007F9921 /* Resources */,
+				05B408ED1186EA7EAF1946CB /* [CP] Embed Pods Frameworks */,
+				84D95858055634F1035791DE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -154,6 +213,62 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05B408ED1186EA7EAF1946CB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Weather History/Pods-Weather History-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather History/Pods-Weather History-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		84D95858055634F1035791DE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Weather History/Pods-Weather History-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2FF2273862937A048D721B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Weather History-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		05F8596D1FF5075D007F9921 /* Sources */ = {
@@ -288,6 +403,7 @@
 		};
 		05F859841FF5075D007F9921 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3F0E9C3400A977D216057C9 /* Pods-Weather History.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +419,7 @@
 		};
 		05F859851FF5075D007F9921 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37E6A1E6EAA754F86147EAE4 /* Pods-Weather History.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
