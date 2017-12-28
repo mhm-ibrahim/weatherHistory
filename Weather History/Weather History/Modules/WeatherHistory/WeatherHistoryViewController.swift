@@ -16,24 +16,23 @@ class WeatherHistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLocationManager()
+        requestWeatherData()
     }
     
-    private func setupLocationManager() {
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
+    func requestWeatherData() {
         if let location = locationManager.location {
             let lat = location.coordinate.latitude
             let long = location.coordinate.longitude
-            
-            WeatherService.current(lat: lat, long: long, units: "metric", language: "en", onSuccess: {
+            let currentLanguage = Bundle.main.preferredLocalizations.first ?? "en"
+                
+            WeatherService.current(lat: lat, long: long, units: "metric", language: currentLanguage, onSuccess: { weather in
                 
             }, onFailure: { error in
                 print(error.localizedDescription)
             })
         }
     }
+    
 
 }
 
@@ -41,5 +40,12 @@ extension WeatherHistoryViewController: CLLocationManagerDelegate {
  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print("Lat \(locations.first?.coordinate.latitude), Long\(locations.first?.coordinate.longitude)")
+    }
+    
+    private func setupLocationManager() {
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 }

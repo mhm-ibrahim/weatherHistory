@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import ObjectMapper
 
 public class WeatherService {
     
@@ -15,7 +16,7 @@ public class WeatherService {
                                long: Double,
                                units: String,
                                language: String,
-                            onSuccess: @escaping () -> (),
+                            onSuccess: @escaping (Weather) -> (),
                             onFailure: @escaping (Error) -> ()) {
         let params: Parameters = ["lat": lat,
                                   "lon": long,
@@ -27,7 +28,8 @@ public class WeatherService {
             guard let JSON = result as? [String: Any],
                 let code = JSON["cod"] as? Int else { return }
             if code == 200 {
-                onSuccess()
+                let weather = Mapper<Weather>().map(JSONObject: result) ?? Weather()
+                onSuccess(weather)
             } else {
                 let serverError = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Something went wrong!"])
                 onFailure(serverError)
