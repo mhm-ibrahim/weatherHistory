@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="icomoon.ttf">
+            <string>icomoon</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageViewerViewController" customModule="Weather_History" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="NkX-i1-jjl" id="a1M-6J-kN7"/>
+                <outlet property="imageView" destination="9Nh-JU-QT3" id="O1m-jS-8cf"/>
+                <outlet property="scrollView" destination="r6M-9S-SUU" id="v7O-hl-W6G"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r6M-9S-SUU">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Nh-JU-QT3">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="9Nh-JU-QT3" secondAttribute="bottom" id="0f0-RH-0uz"/>
+                        <constraint firstItem="9Nh-JU-QT3" firstAttribute="centerY" secondItem="r6M-9S-SUU" secondAttribute="centerY" id="Dgx-td-LSG"/>
+                        <constraint firstItem="9Nh-JU-QT3" firstAttribute="leading" secondItem="r6M-9S-SUU" secondAttribute="leading" id="GIB-ND-Wpd"/>
+                        <constraint firstItem="9Nh-JU-QT3" firstAttribute="top" secondItem="r6M-9S-SUU" secondAttribute="top" id="MAA-bw-hb6"/>
+                        <constraint firstItem="9Nh-JU-QT3" firstAttribute="centerX" secondItem="r6M-9S-SUU" secondAttribute="centerX" id="ouf-oT-9Xu"/>
+                        <constraint firstAttribute="trailing" secondItem="9Nh-JU-QT3" secondAttribute="trailing" id="z2e-UO-MAq"/>
+                    </constraints>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NkX-i1-jjl">
+                    <rect key="frame" x="325" y="40" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="R46-LP-pLn"/>
+                        <constraint firstAttribute="height" constant="30" id="vIL-Gb-sVC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="4h9-i5-5T1"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="NkX-i1-jjl" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="CLy-1A-eOx"/>
+                <constraint firstItem="r6M-9S-SUU" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="UXg-T4-waf"/>
+                <constraint firstItem="r6M-9S-SUU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wwm-Dm-Dnn"/>
+                <constraint firstItem="r6M-9S-SUU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Wwu-qt-iaJ"/>
+                <constraint firstItem="r6M-9S-SUU" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="oDg-pc-eay"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NkX-i1-jjl" secondAttribute="trailing" constant="20" id="sd0-VD-9dN"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

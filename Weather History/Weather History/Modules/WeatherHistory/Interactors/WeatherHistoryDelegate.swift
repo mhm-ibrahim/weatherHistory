@@ -16,4 +16,13 @@ class WeatherHistoryDelegate: NSObject, UICollectionViewDelegate {
         self.presenter = presenter
         super.init()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = ImageViewerViewController()
+        vc.image = presenter.images[indexPath.item]
+        vc.view.backgroundColor = .black
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        presenter.viewController.present(vc, animated: true, completion: nil)
+    }
 }

@@ -21,18 +21,13 @@ class WeatherHistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
+        title = "Weather Photos"
         setupLocationManager()
-//        presenter.requestWeatherData(onSuccess: { weather in
-//
-//        }) { error in
-//
-//        }
-//
-//        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
+        presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
         presenter.loadImages()
+        
+//        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
     }
-    
    
 
 }
@@ -40,7 +35,7 @@ class WeatherHistoryViewController: UIViewController {
 extension WeatherHistoryViewController: CLLocationManagerDelegate {
  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Lat \(locations.first?.coordinate.latitude), Long\(locations.first?.coordinate.longitude)")
+        print("Lat \(locations.first!.coordinate.latitude), Long\(locations.first!.coordinate.longitude)")
     }
     
     private func setupLocationManager() {
@@ -63,6 +58,7 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
             return
         }
         picker.dismiss(animated: true, completion: nil)
+        //TODO: Open Image Editor
         ImagesInteractor.saveImage(image: image)
     }
     
