@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather History/Modules/WeatherHistory/WeatherHistoryViewController.swift"
-            timestampString = "536168321.51089"
+            filePath = "Weather History/Modules/WeatherHistory/Interactors/ImagesInteractor.swift"
+            timestampString = "536173536.116929"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "locationManager(_:didUpdateLocations:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "saveImage(image:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,110 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Weather History/Core/Network/Services/weather/WeatherService.swift"
-            timestampString = "536168321.510972"
+            filePath = "Weather History/Modules/WeatherHistory/Interactors/ImagesInteractor.swift"
+            timestampString = "536173536.117936"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "current(lat:long:units:language:onSuccess:onFailure:)"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "loadImages()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather History/Core/Network/Services/weather/WeatherService.swift"
-            timestampString = "536168321.511349"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "current(lat:long:units:language:onSuccess:onFailure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather History/Core/Network/Services/weather/WeatherService.swift"
-            timestampString = "536168321.511608"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "WeatherService"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather History/Core/Network/Services/weather/WeatherService.swift"
-            timestampString = "536168321.511858"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "current(lat:long:units:language:onSuccess:onFailure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Weather History/Core/Network/Services/weather/WeatherService.swift"
-            timestampString = "536168321.512101"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "current(lat:long:units:language:onSuccess:onFailure:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;, Any) -&gt; () in static Weather_History.WeatherService.current(lat: Swift.Double, long: Swift.Double, units: Swift.String, language: Swift.String, onSuccess: (Weather_History.Weather) -&gt; (), onFailure: (Swift.Error) -&gt; ()) -&gt; ()"
-                  moduleName = "Weather History"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hamed/Desktop/Projects/weatherHistory/Weather%20History/Weather%20History/Core/Network/Services/weather/WeatherService.swift"
-                  timestampString = "536167031.753666"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "548">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Weather_History.Weather in closure #1 (Alamofire.DataResponse&lt;Any&gt;, Any) -&gt; () in static Weather_History.WeatherService.current(lat: Swift.Double, long: Swift.Double, units: Swift.String, language: Swift.String, onSuccess: (Weather_History.Weather) -&gt; (), onFailure: (Swift.Error) -&gt; ()) -&gt; ()"
-                  moduleName = "Weather History"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hamed/Desktop/Projects/weatherHistory/Weather%20History/Weather%20History/Core/Network/Services/weather/WeatherService.swift"
-                  timestampString = "536167031.756252"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

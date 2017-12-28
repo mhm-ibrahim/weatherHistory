@@ -22,6 +22,12 @@
 		05F859A31FF52A0D007F9921 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859A21FF52A0D007F9921 /* WeatherRouter.swift */; };
 		05F859A51FF53380007F9921 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859A41FF53380007F9921 /* Weather.swift */; };
 		05F859A81FF5462A007F9921 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859A71FF5462A007F9921 /* ImagePicker.swift */; };
+		05F859AC1FF5497A007F9921 /* ImageEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859AA1FF5497A007F9921 /* ImageEditorViewController.swift */; };
+		05F859AD1FF5497A007F9921 /* ImageEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F859AB1FF5497A007F9921 /* ImageEditorViewController.xib */; };
+		05F859B01FF54B4F007F9921 /* WeatherHistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859AF1FF54B4F007F9921 /* WeatherHistoryPresenter.swift */; };
+		05F859B31FF54CA0007F9921 /* WeatherHistoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859B21FF54CA0007F9921 /* WeatherHistoryDataSource.swift */; };
+		05F859B51FF54CAB007F9921 /* WeatherHistoryDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859B41FF54CAB007F9921 /* WeatherHistoryDelegate.swift */; };
+		05F859B91FF55253007F9921 /* ImagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859B81FF55253007F9921 /* ImagesInteractor.swift */; };
 		B9C13EA38D78932C55589C98 /* Pods_Weather_History.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,12 @@
 		05F859A21FF52A0D007F9921 /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		05F859A41FF53380007F9921 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		05F859A71FF5462A007F9921 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		05F859AA1FF5497A007F9921 /* ImageEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageEditorViewController.swift; sourceTree = "<group>"; };
+		05F859AB1FF5497A007F9921 /* ImageEditorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageEditorViewController.xib; sourceTree = "<group>"; };
+		05F859AF1FF54B4F007F9921 /* WeatherHistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryPresenter.swift; sourceTree = "<group>"; };
+		05F859B21FF54CA0007F9921 /* WeatherHistoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryDataSource.swift; sourceTree = "<group>"; };
+		05F859B41FF54CAB007F9921 /* WeatherHistoryDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryDelegate.swift; sourceTree = "<group>"; };
+		05F859B81FF55253007F9921 /* ImagesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInteractor.swift; sourceTree = "<group>"; };
 		24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_History.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E6A1E6EAA754F86147EAE4 /* Pods-Weather History.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.release.xcconfig"; sourceTree = "<group>"; };
 		C3F0E9C3400A977D216057C9 /* Pods-Weather History.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +115,7 @@
 		05F859871FF50971007F9921 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				05F859A91FF54964007F9921 /* ImageEditor */,
 				05F859881FF50977007F9921 /* WeatherHistory */,
 			);
 			path = Modules;
@@ -111,6 +124,9 @@
 		05F859881FF50977007F9921 /* WeatherHistory */ = {
 			isa = PBXGroup;
 			children = (
+				05F859B61FF551EC007F9921 /* Views */,
+				05F859B11FF54B6D007F9921 /* Interactors */,
+				05F859AE1FF54B32007F9921 /* Presenters */,
 				05F859891FF509AB007F9921 /* WeatherHistoryViewController.swift */,
 				05F8598A1FF509AB007F9921 /* WeatherHistoryViewController.xib */,
 			);
@@ -187,6 +203,48 @@
 				05F859A71FF5462A007F9921 /* ImagePicker.swift */,
 			);
 			path = Interactors;
+			sourceTree = "<group>";
+		};
+		05F859A91FF54964007F9921 /* ImageEditor */ = {
+			isa = PBXGroup;
+			children = (
+				05F859AA1FF5497A007F9921 /* ImageEditorViewController.swift */,
+				05F859AB1FF5497A007F9921 /* ImageEditorViewController.xib */,
+			);
+			path = ImageEditor;
+			sourceTree = "<group>";
+		};
+		05F859AE1FF54B32007F9921 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				05F859AF1FF54B4F007F9921 /* WeatherHistoryPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		05F859B11FF54B6D007F9921 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				05F859B21FF54CA0007F9921 /* WeatherHistoryDataSource.swift */,
+				05F859B41FF54CAB007F9921 /* WeatherHistoryDelegate.swift */,
+				05F859B81FF55253007F9921 /* ImagesInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		05F859B61FF551EC007F9921 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05F859B71FF55204007F9921 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		05F859B71FF55204007F9921 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		83FA8FFC5117F3B6CEF60612 /* Pods */ = {
@@ -272,6 +330,7 @@
 				05F8597F1FF5075D007F9921 /* LaunchScreen.storyboard in Resources */,
 				05F8597C1FF5075D007F9921 /* Assets.xcassets in Resources */,
 				05F8598C1FF509AB007F9921 /* WeatherHistoryViewController.xib in Resources */,
+				05F859AD1FF5497A007F9921 /* ImageEditorViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,10 +399,15 @@
 			files = (
 				05F859A11FF52A04007F9921 /* WeatherService.swift in Sources */,
 				05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */,
+				05F859B91FF55253007F9921 /* ImagesInteractor.swift in Sources */,
+				05F859B51FF54CAB007F9921 /* WeatherHistoryDelegate.swift in Sources */,
 				05F859971FF50B9B007F9921 /* HURLRequestConvertible.swift in Sources */,
+				05F859AC1FF5497A007F9921 /* ImageEditorViewController.swift in Sources */,
+				05F859B01FF54B4F007F9921 /* WeatherHistoryPresenter.swift in Sources */,
 				05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */,
 				05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */,
 				05F859A31FF52A0D007F9921 /* WeatherRouter.swift in Sources */,
+				05F859B31FF54CA0007F9921 /* WeatherHistoryDataSource.swift in Sources */,
 				05F859951FF50B8C007F9921 /* HSessionManager.swift in Sources */,
 				05F859A81FF5462A007F9921 /* ImagePicker.swift in Sources */,
 				05F8599B1FF50C15007F9921 /* UserDefaults.swift in Sources */,

@@ -8,32 +8,32 @@
 
 import UIKit
 import CoreLocation
+//TODO: use force touch
+// Pinterest layout ??!
+//Use image viewer my image viewer
 
 class WeatherHistoryViewController: UIViewController {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var presenter: WeatherHistoryPresenter!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
         setupLocationManager()
-        requestWeatherData()
-        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
+//        presenter.requestWeatherData(onSuccess: { weather in
+//
+//        }) { error in
+//
+//        }
+//
+//        let images = ImagesInteractor.loadImages()
+//        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
     }
     
-    func requestWeatherData() {
-        if let location = locationManager.location {
-            let lat = location.coordinate.latitude
-            let long = location.coordinate.longitude
-            let currentLanguage = Bundle.main.preferredLocalizations.first ?? "en"
-                
-            WeatherService.current(lat: lat, long: long, units: "metric", language: currentLanguage, onSuccess: { weather in
-                
-            }, onFailure: { error in
-                print(error.localizedDescription)
-            })
-        }
-    }
-    
+   
 
 }
 
@@ -63,7 +63,7 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
             return
         }
         picker.dismiss(animated: true, completion: nil)
-//        school.profileImage = image
+        ImagesInteractor.saveImage(image: image)
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
