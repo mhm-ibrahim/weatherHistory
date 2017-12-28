@@ -24,33 +24,36 @@ struct Constants {
     static var baseURL: String {
         switch environment {
         case .debug:
-            return ""
+            return "http://api.openweathermap.org"
         case .release:
-            return ""
+            return "http://api.openweathermap.org"
         }
     }
     
     static var baseApiURL: String {
         switch environment {
         case .debug:
-            return baseURL + "/\(namespace)/\(APIVersion.v1)"
+            return baseURL + "/\(namespace)/\(APIVersion.v25.rawValue)"
         case .release:
-            return baseURL + "/\(namespace)/\(APIVersion.v1)"
+            return baseURL + "/\(namespace)/\(APIVersion.v25.rawValue)"
         }
     }
     
 }
 
 extension Constants {
-    
     static var namespace: String {
-        return  "api"
+        return  "data"
     }
     
     public enum APIVersion: String {
         case
-        v1 = "v1",
-        v2 = "v2"
+        v25 = "2.5"
     }
-    
+}
+
+extension Constants {
+    static var weatherAPIKEY: String {
+        return "be41eee34a0fcd23293be278c0333f88"
+    }
 }
