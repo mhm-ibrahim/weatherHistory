@@ -12,6 +12,11 @@
 		05F8597F1FF5075D007F9921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05F8597D1FF5075D007F9921 /* LaunchScreen.storyboard */; };
 		05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859891FF509AB007F9921 /* WeatherHistoryViewController.swift */; };
 		05F8598C1FF509AB007F9921 /* WeatherHistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05F8598A1FF509AB007F9921 /* WeatherHistoryViewController.xib */; };
+		05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859921FF50B7D007F9921 /* HNetwork.swift */; };
+		05F859951FF50B8C007F9921 /* HSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859941FF50B8C007F9921 /* HSessionManager.swift */; };
+		05F859971FF50B9B007F9921 /* HURLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859961FF50B9B007F9921 /* HURLRequestConvertible.swift */; };
+		05F859991FF50BA7007F9921 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859981FF50BA7007F9921 /* Constants.swift */; };
+		05F8599B1FF50C15007F9921 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F8599A1FF50C15007F9921 /* UserDefaults.swift */; };
 		B9C13EA38D78932C55589C98 /* Pods_Weather_History.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +28,11 @@
 		05F859801FF5075D007F9921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05F859891FF509AB007F9921 /* WeatherHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherHistoryViewController.swift; sourceTree = "<group>"; };
 		05F8598A1FF509AB007F9921 /* WeatherHistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherHistoryViewController.xib; sourceTree = "<group>"; };
+		05F859921FF50B7D007F9921 /* HNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HNetwork.swift; sourceTree = "<group>"; };
+		05F859941FF50B8C007F9921 /* HSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSessionManager.swift; sourceTree = "<group>"; };
+		05F859961FF50B9B007F9921 /* HURLRequestConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HURLRequestConvertible.swift; sourceTree = "<group>"; };
+		05F859981FF50BA7007F9921 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		05F8599A1FF50C15007F9921 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		24494BCEA549DD2D920708AE /* Pods_Weather_History.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Weather_History.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37E6A1E6EAA754F86147EAE4 /* Pods-Weather History.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.release.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.release.xcconfig"; sourceTree = "<group>"; };
 		C3F0E9C3400A977D216057C9 /* Pods-Weather History.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Weather History.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Weather History/Pods-Weather History.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 		05F8598E1FF50A42007F9921 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				05F859911FF50B6C007F9921 /* Base */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -123,8 +134,20 @@
 		05F859901FF50A7B007F9921 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				05F8599A1FF50C15007F9921 /* UserDefaults.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		05F859911FF50B6C007F9921 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				05F859981FF50BA7007F9921 /* Constants.swift */,
+				05F859921FF50B7D007F9921 /* HNetwork.swift */,
+				05F859941FF50B8C007F9921 /* HSessionManager.swift */,
+				05F859961FF50B9B007F9921 /* HURLRequestConvertible.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		83FA8FFC5117F3B6CEF60612 /* Pods */ = {
@@ -275,8 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */,
+				05F859971FF50B9B007F9921 /* HURLRequestConvertible.swift in Sources */,
 				05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */,
 				05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */,
+				05F859951FF50B8C007F9921 /* HSessionManager.swift in Sources */,
+				05F8599B1FF50C15007F9921 /* UserDefaults.swift in Sources */,
+				05F859991FF50BA7007F9921 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
