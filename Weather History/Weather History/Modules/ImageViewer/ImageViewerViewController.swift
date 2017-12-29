@@ -12,14 +12,20 @@ class ImageViewerViewController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var closeButton: UIButton!
+    @IBOutlet weak var closeButton: UIButton?
     var image : UIImage!
-
+    var hideDismissButton = false {
+        didSet {
+            closeButton?.isHidden = hideDismissButton
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = image
-        closeButton.roundCorners(withRadius: closeButton.frame.height / 2)
+        closeButton!.roundCorners(withRadius: closeButton!.frame.height / 2)
         initScrollView()
+        closeButton!.isHidden = hideDismissButton
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {

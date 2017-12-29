@@ -5,7 +5,7 @@
 //  Created by Mohamed Hamed on 12/28/17.
 //  Copyright © 2017 Hamed. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import CoreLocation
 import NVActivityIndicatorView
@@ -24,6 +24,9 @@ class WeatherHistoryViewController: UIViewController {
         presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
         presenter.requestWeatherData(onSuccess: nil, onFailure: nil)
         presenter.loadImages()
+        if( traitCollection.forceTouchCapability == .available){
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
    
 
@@ -107,4 +110,27 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+}
+
+extension WeatherHistoryViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = collectionView?.indexPathForItem(at: location) else { return nil }
+        guard let cell = collectionView?.cellForItem(at: indexPath) else { return nil }
+        let vc = ImageViewerViewController()
+        vc.image = presenter.images[indexPath.row]
+        vc.hideDismissButton = true
+        let preferedHeight = vc.image.suitableSize(widthLimit: UIScreen.main.bounds.width)?.height ?? 300
+        vc.preferredContentSize = CGSize(width: 0.0, height: preferedHeight)
+        previewingContext.sourceRect = cell.frame
+        return vc
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        if let vc = viewControllerToCommit as? ImageViewerViewController {
+            vc.hideDismissButton = false
+            self.navigationController?.present(viewControllerToCommit, animated: true, completion: nil)
+        }
+    }
+
 }
