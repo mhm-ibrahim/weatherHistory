@@ -11,7 +11,6 @@ A “Weather” application lets users take a photo, add current weather informa
 - [x] Save the image to the Photo library 
 - [x] Share the image 
 
-<img src="screenshot.PNG" width="350" height="600" />
 
 ## License
 
