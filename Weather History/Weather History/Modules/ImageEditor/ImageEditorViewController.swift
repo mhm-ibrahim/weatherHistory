@@ -18,6 +18,7 @@ class ImageEditorViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var canvasImageView: UIImageView!
     @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dismissButton: UIButton!
     
     var image: UIImage!
     var imageEditorDelegate: ImageEditorDelegate?
@@ -25,6 +26,8 @@ class ImageEditorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setImageView(image: image)
+        dismissButton.roundCorners(withRadius: dismissButton.frame.height / 2)
+        
         let emojiLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         emojiLabel.textAlignment = .center
         emojiLabel.text = "💃🏻"
@@ -37,6 +40,32 @@ class ImageEditorViewController: UIViewController {
         let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
     }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(ImageEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
+    }
+    
+    @objc func image(_ image: UIImage, withPotentialError error: NSErrorPointer, contextInfo: UnsafeRawPointer) {
+        let alert = UIAlertController(title: "Image Saved", message: "Image successfully saved to Photos library", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func shareButtonTapped(_ sender: Any) {
+        let activity = UIActivityViewController(activityItems: [canvasView.toImage()], applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        let img = self.canvasView.toImage()
+        imageEditorDelegate?.doneEditing(image: img)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dismissButtonTapped(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension ImageEditorViewController {

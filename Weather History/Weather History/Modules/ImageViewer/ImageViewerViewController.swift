@@ -22,11 +22,12 @@ class ImageViewerViewController: UIViewController {
         initScrollView()
     }
     
-    
     @IBAction func closeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
 }
+
 extension ImageViewerViewController: UIScrollViewDelegate {
     
     //Mark ScrollView

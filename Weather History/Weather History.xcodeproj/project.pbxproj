@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		05C302401FF66F4800518C48 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3023F1FF66F4800518C48 /* UIImage.swift */; };
 		05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302411FF6772600518C48 /* Editor+Gestures.swift */; };
+		05C302451FF6799B00518C48 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302441FF6799B00518C48 /* GradientView.swift */; };
 		05DA018F1FF5659700113CBC /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05DA018E1FF5659300113CBC /* icomoon.ttf */; };
 		05DA01911FF567BB00113CBC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA01901FF567BB00113CBC /* UIView.swift */; };
 		05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859741FF5075D007F9921 /* AppDelegate.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		05C3023F1FF66F4800518C48 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		05C302411FF6772600518C48 /* Editor+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+Gestures.swift"; sourceTree = "<group>"; };
+		05C302441FF6799B00518C48 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		05DA018E1FF5659300113CBC /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		05DA01901FF567BB00113CBC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		05F859711FF5075D007F9921 /* Weather History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05C302431FF6799000518C48 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				05C302441FF6799B00518C48 /* GradientView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		05F859681FF5075D007F9921 = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +238,7 @@
 		05F859A91FF54964007F9921 /* ImageEditor */ = {
 			isa = PBXGroup;
 			children = (
+				05C302431FF6799000518C48 /* Views */,
 				05F859AA1FF5497A007F9921 /* ImageEditorViewController.swift */,
 				05F859AB1FF5497A007F9921 /* ImageEditorViewController.xib */,
 			);
@@ -434,6 +445,7 @@
 			files = (
 				05F859C31FF561F9007F9921 /* ImageViewerViewController.swift in Sources */,
 				05C302401FF66F4800518C48 /* UIImage.swift in Sources */,
+				05C302451FF6799B00518C48 /* GradientView.swift in Sources */,
 				05F859BC1FF55CCC007F9921 /* ImageThumbCollectionViewCell.swift in Sources */,
 				05F859A11FF52A04007F9921 /* WeatherService.swift in Sources */,
 				05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */,

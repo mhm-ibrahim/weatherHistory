@@ -81,6 +81,9 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
             let vc = ImageEditorViewController()
             vc.image = image
             vc.imageEditorDelegate = self
+            vc.view.backgroundColor = .black
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .crossDissolve
             self.present(vc, animated: true, completion: nil)
         })
         

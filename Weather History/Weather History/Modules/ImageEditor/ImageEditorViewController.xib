@@ -9,11 +9,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="icomoon.ttf">
+            <string>icomoon</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageEditorViewController" customModule="Weather_History" customModuleProvider="target">
             <connections>
                 <outlet property="canvasImageView" destination="zBK-bG-Er0" id="lDP-1W-GSq"/>
                 <outlet property="canvasView" destination="5eC-xV-jGz" id="W6f-aH-tZi"/>
+                <outlet property="dismissButton" destination="LiM-tg-rUd" id="YuW-q7-Xo9"/>
                 <outlet property="imageView" destination="r53-s9-esL" id="oWd-40-re6"/>
                 <outlet property="imageViewHeightConstraint" destination="Imp-CJ-mSo" id="VRo-XC-YB0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -51,12 +57,112 @@
                         <constraint firstItem="zBK-bG-Er0" firstAttribute="centerY" secondItem="r53-s9-esL" secondAttribute="centerY" id="zwC-20-Q69"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g8P-9A-uVt" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="375" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Knn-lC-wxf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cjj-f2-d24" customClass="GradientView" customModule="iOSPhotoEditor" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="jIR-wk-6AD"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="gradientFromtop" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FeT-3C-c80">
+                    <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gsS-rg-9Ue">
+                            <rect key="frame" x="12" y="0.0" width="75" height="52"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6c-In-b9q">
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="52"/>
+                                    <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                                    <state key="normal" title="">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="saveButtonTapped:" destination="-1" eventType="touchUpInside" id="OOB-w7-lEb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-XV-2tc">
+                                    <rect key="frame" x="45" y="0.0" width="30" height="52"/>
+                                    <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                                    <state key="normal" title="">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="shareButtonTapped:" destination="-1" eventType="touchUpInside" id="Dhj-qE-sKb"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1g-dD-dCO">
+                            <rect key="frame" x="313" y="-14" width="50" height="62"/>
+                            <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="50"/>
+                            <size key="titleShadowOffset" width="1" height="0.0"/>
+                            <state key="normal" title="">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="-1" eventType="touchUpInside" id="PVJ-0W-s5V"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="gsS-rg-9Ue" firstAttribute="top" secondItem="FeT-3C-c80" secondAttribute="top" id="49v-rk-V2D"/>
+                        <constraint firstAttribute="bottom" secondItem="c1g-dD-dCO" secondAttribute="bottom" constant="12" id="9Bz-n0-ZiS"/>
+                        <constraint firstItem="gsS-rg-9Ue" firstAttribute="leading" secondItem="FeT-3C-c80" secondAttribute="leading" constant="12" id="BaJ-BH-1U2"/>
+                        <constraint firstAttribute="height" constant="60" id="FQz-0M-Qnh"/>
+                        <constraint firstAttribute="trailing" secondItem="c1g-dD-dCO" secondAttribute="trailing" constant="12" id="LME-Ft-s0B"/>
+                        <constraint firstAttribute="bottom" secondItem="gsS-rg-9Ue" secondAttribute="bottom" constant="8" id="rZf-LK-B5w"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiM-tg-rUd">
+                    <rect key="frame" x="325" y="40" width="30" height="30"/>
+                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="qwQ-vQ-LBZ"/>
+                        <constraint firstAttribute="width" constant="30" id="sAm-eX-Heu"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="icomoon" family="icomoon" pointSize="25"/>
+                    <size key="titleShadowOffset" width="1" height="0.0"/>
+                    <state key="normal" title="">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.1532266695" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissButtonTapped:" destination="-1" eventType="touchUpInside" id="TeK-tK-eXA"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="g8P-9A-uVt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4cV-FJ-EN1"/>
                 <constraint firstItem="5eC-xV-jGz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="6Vw-ee-ELP"/>
+                <constraint firstItem="g8P-9A-uVt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="7tz-df-aaZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LiM-tg-rUd" secondAttribute="trailing" constant="20" id="DKf-H1-LsW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FeT-3C-c80" secondAttribute="bottom" id="V13-Ji-gz1"/>
+                <constraint firstItem="FeT-3C-c80" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="d9N-vh-p4g"/>
+                <constraint firstItem="cjj-f2-d24" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="e0o-NH-kLy"/>
+                <constraint firstItem="cjj-f2-d24" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="e61-NV-2Wx"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cjj-f2-d24" secondAttribute="bottom" id="jfJ-jP-6pf"/>
                 <constraint firstItem="5eC-xV-jGz" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="kv6-jg-Hhu"/>
+                <constraint firstItem="FeT-3C-c80" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="svW-IQ-DeE"/>
+                <constraint firstItem="g8P-9A-uVt" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="ucw-Yp-g6h"/>
                 <constraint firstItem="5eC-xV-jGz" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="vyP-oU-I87"/>
+                <constraint firstItem="LiM-tg-rUd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="xtO-ot-ImJ"/>
                 <constraint firstItem="5eC-xV-jGz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zhl-fi-56H"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
