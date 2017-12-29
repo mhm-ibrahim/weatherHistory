@@ -13,7 +13,7 @@ class WeatherHistoryPresenter:  NSObject {
     
     unowned var viewController : UIViewController
     unowned var collectionView : UICollectionView
-    
+    var weather: Weather?
     var images = [UIImage]() {
         didSet {
             collectionView.reloadData()
@@ -36,8 +36,8 @@ class WeatherHistoryPresenter:  NSObject {
         images = ImagesInteractor.loadImages()
     }
     
-    func requestWeatherData(onSuccess: @escaping (Weather) -> (),
-                            onFailure: @escaping (Error) -> ()) {
+    func requestWeatherData(onSuccess: ((Weather) -> ())? = nil,
+                            onFailure: ((Error) -> ())? = nil) {
         
         if let location = (viewController as? WeatherHistoryViewController)?.locationManager.location {
             let lat = location.coordinate.latitude
@@ -45,9 +45,10 @@ class WeatherHistoryPresenter:  NSObject {
             let currentLanguage = Bundle.main.preferredLocalizations.first ?? "en"
             
             WeatherService.current(lat: lat, long: long, units: "metric", language: currentLanguage, onSuccess: { weather in
-                onSuccess(weather)
+                self.weather = weather
+                onSuccess?(weather)
             }, onFailure: { error in
-                onFailure(error)
+                onFailure?(error)
             })
         }
     }

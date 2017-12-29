@@ -38,12 +38,16 @@ class ImageEditorViewController: UIViewController {
         weatherCard.weatherConditionLabel.text = weather.info?.description
         addView(view: weatherCard)
     }
+    
     func setImageView(image: UIImage) {
         imageView.image = image
         let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)
         imageViewHeightConstraint.constant = (size?.height)!
     }
-    
+}
+
+extension ImageEditorViewController {
+
     @IBAction func saveButtonTapped(_ sender: Any) {
         UIImageWriteToSavedPhotosAlbum(canvasView.toImage(),self, #selector(ImageEditorViewController.image(_:withPotentialError:contextInfo:)), nil)
     }

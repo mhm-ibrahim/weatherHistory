@@ -15,17 +15,13 @@ class WeatherHistoryViewController: UIViewController {
     
     var presenter: WeatherHistoryPresenter!
     let locationManager = CLLocationManager()
-    var weather: Weather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavbar()
         setupLocationManager()
         presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
-        presenter.requestWeatherData(onSuccess: { weather in
-            self.weather = weather
-        }) { error in
-        }
+        presenter.requestWeatherData(onSuccess: nil, onFailure: nil)
         presenter.loadImages()
     }
    
@@ -47,7 +43,16 @@ class WeatherHistoryViewController: UIViewController {
     }
     
     @objc func cameraButtonTapped(sender: Any) {
-        ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
+        if presenter.weather != nil {
+            ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
+        } else {
+            presenter.requestWeatherData(onSuccess: { [weak self] _ in
+                guard let `self` = self else { return }
+                self.cameraButtonTapped(sender: sender)
+            }, onFailure: { error in
+                print(error)
+            })
+        }
     }
 }
 
@@ -85,7 +90,7 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: {
             let vc = ImageEditorViewController()
             vc.image = image
-            vc.weather = self.weather!
+            vc.weather = self.presenter.weather!
             vc.imageEditorDelegate = self
             vc.view.backgroundColor = .black
             vc.modalPresentationStyle = .fullScreen
