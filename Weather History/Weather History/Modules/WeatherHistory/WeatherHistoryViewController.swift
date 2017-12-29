@@ -9,9 +9,6 @@
 import UIKit
 import CoreLocation
 //TODO: use force touch
-// Pinterest layout ??!
-//Use image viewer my image viewer
-
 class WeatherHistoryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -64,6 +61,12 @@ extension WeatherHistoryViewController: CLLocationManagerDelegate {
 }
 
 //MARK: UIImagePickerControllerDelegate
+extension WeatherHistoryViewController: ImageEditorDelegate {
+    func doneEditing(image: UIImage) {
+        ImagesInteractor.saveImage(image: image)
+        presenter.loadImages()
+    }
+}
 
 extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -74,9 +77,13 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
             picker.dismiss(animated: true, completion: nil)
             return
         }
-        picker.dismiss(animated: true, completion: nil)
-        //TODO: Open Image Editor
-        ImagesInteractor.saveImage(image: image)
+        picker.dismiss(animated: true, completion: {
+            let vc = ImageEditorViewController()
+            vc.image = image
+            vc.imageEditorDelegate = self
+            self.present(vc, animated: true, completion: nil)
+        })
+        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

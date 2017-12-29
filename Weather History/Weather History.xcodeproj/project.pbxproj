@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05C302401FF66F4800518C48 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3023F1FF66F4800518C48 /* UIImage.swift */; };
+		05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302411FF6772600518C48 /* Editor+Gestures.swift */; };
 		05DA018F1FF5659700113CBC /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05DA018E1FF5659300113CBC /* icomoon.ttf */; };
 		05DA01911FF567BB00113CBC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA01901FF567BB00113CBC /* UIView.swift */; };
 		05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859741FF5075D007F9921 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		05C3023F1FF66F4800518C48 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		05C302411FF6772600518C48 /* Editor+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+Gestures.swift"; sourceTree = "<group>"; };
 		05DA018E1FF5659300113CBC /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		05DA01901FF567BB00113CBC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		05F859711FF5075D007F9921 /* Weather History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +184,7 @@
 			children = (
 				05F8599A1FF50C15007F9921 /* UserDefaults.swift */,
 				05DA01901FF567BB00113CBC /* UIView.swift */,
+				05C3023F1FF66F4800518C48 /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			children = (
 				05F859C11FF561F9007F9921 /* ImageViewerViewController.swift */,
 				05F859C21FF561F9007F9921 /* ImageViewerViewController.xib */,
+				05C302411FF6772600518C48 /* Editor+Gestures.swift */,
 			);
 			path = ImageViewer;
 			sourceTree = "<group>";
@@ -427,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				05F859C31FF561F9007F9921 /* ImageViewerViewController.swift in Sources */,
+				05C302401FF66F4800518C48 /* UIImage.swift in Sources */,
 				05F859BC1FF55CCC007F9921 /* ImageThumbCollectionViewCell.swift in Sources */,
 				05F859A11FF52A04007F9921 /* WeatherService.swift in Sources */,
 				05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */,
@@ -435,6 +442,7 @@
 				05F859971FF50B9B007F9921 /* HURLRequestConvertible.swift in Sources */,
 				05F859AC1FF5497A007F9921 /* ImageEditorViewController.swift in Sources */,
 				05F859B01FF54B4F007F9921 /* WeatherHistoryPresenter.swift in Sources */,
+				05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */,
 				05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */,
 				05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */,
 				05F859A31FF52A0D007F9921 /* WeatherRouter.swift in Sources */,
