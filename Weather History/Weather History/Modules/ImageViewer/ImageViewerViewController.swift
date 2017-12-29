@@ -31,6 +31,14 @@ class ImageViewerViewController: UIViewController {
     @IBAction func closeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+
+    override var previewActionItems: [UIPreviewActionItem] {
+        let deleteAction = UIPreviewAction(title: "Delete", style: .destructive) { (action, viewController) -> Void in
+            //TODO: 
+            print("You deleted the photo")
+        }
+        return [deleteAction]
+    }
     
 }
 
