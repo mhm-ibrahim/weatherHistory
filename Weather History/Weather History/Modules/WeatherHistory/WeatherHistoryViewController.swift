@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreLocation
-//TODO: use force touch
+import NVActivityIndicatorView
+
 class WeatherHistoryViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -46,11 +47,14 @@ class WeatherHistoryViewController: UIViewController {
         if presenter.weather != nil {
             ImagePickerHelper.pickImageActionSheet(viewController: self, delegate: self)
         } else {
+            NVActivityIndicatorPresenter.sharedInstance.startAnimating(ActivityData())
             presenter.requestWeatherData(onSuccess: { [weak self] _ in
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
                 guard let `self` = self else { return }
                 self.cameraButtonTapped(sender: sender)
             }, onFailure: { error in
-                print(error)
+                NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+                Alert.show(message: error.localizedDescription)
             })
         }
     }

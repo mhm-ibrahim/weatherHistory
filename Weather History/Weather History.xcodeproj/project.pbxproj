@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0534DAE61FF6922C00D74093 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0534DAE51FF6922C00D74093 /* Alert.swift */; };
 		05C302401FF66F4800518C48 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3023F1FF66F4800518C48 /* UIImage.swift */; };
 		05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302411FF6772600518C48 /* Editor+Gestures.swift */; };
 		05C302451FF6799B00518C48 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302441FF6799B00518C48 /* GradientView.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0534DAE51FF6922C00D74093 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		05C3023F1FF66F4800518C48 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		05C302411FF6772600518C48 /* Editor+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+Gestures.swift"; sourceTree = "<group>"; };
 		05C302441FF6799B00518C48 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				05F8598E1FF50A42007F9921 /* Network */,
 				05F8598F1FF50A49007F9921 /* Entities */,
 				05F859901FF50A7B007F9921 /* Extensions */,
+				0534DAE51FF6922C00D74093 /* Alert.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -390,11 +393,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Weather History/Pods-Weather History-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +453,7 @@
 				05F859BC1FF55CCC007F9921 /* ImageThumbCollectionViewCell.swift in Sources */,
 				05F859A11FF52A04007F9921 /* WeatherService.swift in Sources */,
 				05F859931FF50B7D007F9921 /* HNetwork.swift in Sources */,
+				0534DAE61FF6922C00D74093 /* Alert.swift in Sources */,
 				05F859B91FF55253007F9921 /* ImagesInteractor.swift in Sources */,
 				05F859B51FF54CAB007F9921 /* WeatherHistoryDelegate.swift in Sources */,
 				05F859971FF50B9B007F9921 /* HURLRequestConvertible.swift in Sources */,

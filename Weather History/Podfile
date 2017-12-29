@@ -8,5 +8,5 @@ target 'Weather History' do
   # Pods for Weather History
 pod 'Alamofire'
 pod 'ObjectMapper'
-
+pod 'NVActivityIndicatorView'
 end
