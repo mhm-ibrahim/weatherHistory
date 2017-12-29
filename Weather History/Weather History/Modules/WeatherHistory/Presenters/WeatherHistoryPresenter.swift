@@ -16,6 +16,7 @@ class WeatherHistoryPresenter:  NSObject {
     var weather: Weather?
     var images = [UIImage]() {
         didSet {
+            (viewController as! WeatherHistoryViewController).emptyView.isHidden = !images.isEmpty
             collectionView.reloadData()
         }
     }
