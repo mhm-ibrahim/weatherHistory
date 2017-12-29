@@ -15,12 +15,17 @@ class WeatherHistoryViewController: UIViewController {
     
     var presenter: WeatherHistoryPresenter!
     let locationManager = CLLocationManager()
+    var weather: Weather?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavbar()
         setupLocationManager()
         presenter = WeatherHistoryPresenter(viewController: self, collectionView: collectionView)
+        presenter.requestWeatherData(onSuccess: { weather in
+            self.weather = weather
+        }) { error in
+        }
         presenter.loadImages()
     }
    
@@ -49,7 +54,7 @@ class WeatherHistoryViewController: UIViewController {
 extension WeatherHistoryViewController: CLLocationManagerDelegate {
  
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("Lat \(locations.first!.coordinate.latitude), Long\(locations.first!.coordinate.longitude)")
+        //print("Lat \(locations.first!.coordinate.latitude), Long\(locations.first!.coordinate.longitude)")
     }
     
     private func setupLocationManager() {
@@ -80,6 +85,7 @@ extension WeatherHistoryViewController: UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: {
             let vc = ImageEditorViewController()
             vc.image = image
+            vc.weather = self.weather!
             vc.imageEditorDelegate = self
             vc.view.backgroundColor = .black
             vc.modalPresentationStyle = .fullScreen

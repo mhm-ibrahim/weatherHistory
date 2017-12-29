@@ -22,19 +22,22 @@ class ImageEditorViewController: UIViewController {
     
     var image: UIImage!
     var imageEditorDelegate: ImageEditorDelegate?
+    var weather: Weather!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setImageView(image: image)
         dismissButton.roundCorners(withRadius: dismissButton.frame.height / 2)
-        
-        let emojiLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        emojiLabel.textAlignment = .center
-        emojiLabel.text = "💃🏻"
-        emojiLabel.font = UIFont.systemFont(ofSize: 80)
-        addView(view: emojiLabel)
+        addWeatherCard()
     }
 
+    func addWeatherCard() {
+        let weatherCard = WeatherInfoCard(frame: CGRect(x: 0, y: 0, width: 200, height: 150))
+        weatherCard.tempLabel.text = weather.temp?.temp.description
+        weatherCard.cityLabel.text = weather.city
+        weatherCard.weatherConditionLabel.text = weather.info?.description
+        addView(view: weatherCard)
+    }
     func setImageView(image: UIImage) {
         imageView.image = image
         let size = image.suitableSize(widthLimit: UIScreen.main.bounds.width)

@@ -10,6 +10,8 @@
 		05C302401FF66F4800518C48 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3023F1FF66F4800518C48 /* UIImage.swift */; };
 		05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302411FF6772600518C48 /* Editor+Gestures.swift */; };
 		05C302451FF6799B00518C48 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302441FF6799B00518C48 /* GradientView.swift */; };
+		05C302471FF67E5400518C48 /* WeatherInfoCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05C302461FF67E5400518C48 /* WeatherInfoCard.xib */; };
+		05C302491FF67F5A00518C48 /* WeatherInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C302481FF67F5A00518C48 /* WeatherInfoCard.swift */; };
 		05DA018F1FF5659700113CBC /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05DA018E1FF5659300113CBC /* icomoon.ttf */; };
 		05DA01911FF567BB00113CBC /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05DA01901FF567BB00113CBC /* UIView.swift */; };
 		05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F859741FF5075D007F9921 /* AppDelegate.swift */; };
@@ -44,6 +46,8 @@
 		05C3023F1FF66F4800518C48 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		05C302411FF6772600518C48 /* Editor+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Editor+Gestures.swift"; sourceTree = "<group>"; };
 		05C302441FF6799B00518C48 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		05C302461FF67E5400518C48 /* WeatherInfoCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherInfoCard.xib; sourceTree = "<group>"; };
+		05C302481FF67F5A00518C48 /* WeatherInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfoCard.swift; sourceTree = "<group>"; };
 		05DA018E1FF5659300113CBC /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		05DA01901FF567BB00113CBC /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		05F859711FF5075D007F9921 /* Weather History.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weather History.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				05C302441FF6799B00518C48 /* GradientView.swift */,
+				05C302461FF67E5400518C48 /* WeatherInfoCard.xib */,
+				05C302481FF67F5A00518C48 /* WeatherInfoCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,7 +170,7 @@
 		05F8598D1FF50A3B007F9921 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				05F859A61FF54617007F9921 /* Interactors */,
+				05F859A71FF5462A007F9921 /* ImagePicker.swift */,
 				05F8598E1FF50A42007F9921 /* Network */,
 				05F8598F1FF50A49007F9921 /* Entities */,
 				05F859901FF50A7B007F9921 /* Extensions */,
@@ -225,14 +231,6 @@
 				05F859A21FF52A0D007F9921 /* WeatherRouter.swift */,
 			);
 			path = weather;
-			sourceTree = "<group>";
-		};
-		05F859A61FF54617007F9921 /* Interactors */ = {
-			isa = PBXGroup;
-			children = (
-				05F859A71FF5462A007F9921 /* ImagePicker.swift */,
-			);
-			path = Interactors;
 			sourceTree = "<group>";
 		};
 		05F859A91FF54964007F9921 /* ImageEditor */ = {
@@ -372,6 +370,7 @@
 			files = (
 				05F859C41FF561F9007F9921 /* ImageViewerViewController.xib in Resources */,
 				05DA018F1FF5659700113CBC /* icomoon.ttf in Resources */,
+				05C302471FF67E5400518C48 /* WeatherInfoCard.xib in Resources */,
 				05F8597F1FF5075D007F9921 /* LaunchScreen.storyboard in Resources */,
 				05F8597C1FF5075D007F9921 /* Assets.xcassets in Resources */,
 				05F8598C1FF509AB007F9921 /* WeatherHistoryViewController.xib in Resources */,
@@ -455,6 +454,7 @@
 				05F859AC1FF5497A007F9921 /* ImageEditorViewController.swift in Sources */,
 				05F859B01FF54B4F007F9921 /* WeatherHistoryPresenter.swift in Sources */,
 				05C302421FF6772600518C48 /* Editor+Gestures.swift in Sources */,
+				05C302491FF67F5A00518C48 /* WeatherInfoCard.swift in Sources */,
 				05F8598B1FF509AB007F9921 /* WeatherHistoryViewController.swift in Sources */,
 				05F859751FF5075D007F9921 /* AppDelegate.swift in Sources */,
 				05F859A31FF52A0D007F9921 /* WeatherRouter.swift in Sources */,
