@@ -25,7 +25,7 @@ class WeatherHistoryViewController: UIViewController {
         presenter.requestWeatherData(onSuccess: nil, onFailure: nil)
         presenter.loadImages()
         if( traitCollection.forceTouchCapability == .available){
-            registerForPreviewing(with: self, sourceView: view)
+            registerForPreviewing(with: self, sourceView: collectionView)
         }
     }
    

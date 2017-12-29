@@ -78,7 +78,7 @@ extension ImageEditorViewController {
 extension ImageEditorViewController {
     
     func addView(view: UIView) {
-        view.center = canvasImageView.center
+        //view.center = canvasImageView.center
         self.canvasImageView.addSubview(view)
         addGestures(view: view)
     }

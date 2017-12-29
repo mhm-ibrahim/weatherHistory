@@ -50,6 +50,9 @@ class WeatherHistoryPresenter:  NSObject {
             }, onFailure: { error in
                 onFailure?(error)
             })
+        } else {
+             let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Check your location settings"])
+            onFailure?(error)
         }
     }
 }
